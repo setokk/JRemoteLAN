@@ -1,7 +1,10 @@
 package gui.client;
 
+import client.Client;
+
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class ClientWindow extends JFrame {
 
@@ -25,7 +28,15 @@ public class ClientWindow extends JFrame {
     hostIPAddressField = new JTextField("");
     hostIPAddressField.setPreferredSize(new Dimension(300, 50));
     hostIPAddressField.setHorizontalAlignment(JTextField.CENTER);
+
     connectToHostBtn = new JButton("Connect");
+    connectToHostBtn.addActionListener((e) -> {
+      if (hostIPAddressField.getText().trim().isEmpty())
+        return;
+
+      dispose();
+      new ConnectionWindow(hostIPAddressField.getText());
+    });
 
     panel = new JPanel(new GridBagLayout());
 
