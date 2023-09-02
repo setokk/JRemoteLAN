@@ -12,6 +12,7 @@ public class Main {
     UIManager.put("Label.font", resizedFont);
     UIManager.put("Button.font", resizedFont);
     UIManager.put("TextArea.font", resizedFont);
+    UIManager.put("TextField.font", resizedFont);
     new StartScreenWindow();
   }
 }

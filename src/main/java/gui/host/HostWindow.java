@@ -8,12 +8,15 @@ import java.io.IOException;
 
 public class HostWindow extends JFrame {
 
+  public static final int WIDTH = 500;
+  public static final int HEIGHT = 300;
   private static Server server = null;
+
   private JPanel panel;
   private JLabel connectionLabel;
 
   public HostWindow() throws IOException, AWTException {
-    this.setMinimumSize(new Dimension(500, 300));
+    this.setMinimumSize(new Dimension(WIDTH, HEIGHT));
     this.setTitle("JRemoteLAN");
     this.setResizable(false);
     this.setLocationRelativeTo(null);
